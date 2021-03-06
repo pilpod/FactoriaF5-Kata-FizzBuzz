@@ -4,21 +4,19 @@ namespace App;
 
 class FizzBuzz {
 
-    public function multiply_by($value) {
-        if($value % 3 == 0 && $value % 5 == 0) {
-            return "FizzBuzz";
-        }
+    
+    public function response(int $numb) : string
+    {
+        $divisibleBy3 = $numb % 3 === 0;
+        $divisibleBy5 = $numb % 5 === 0;
 
-        if($value % 3 == 0) {
-            return "Fizz";
-        }
+        if($divisibleBy3 && $divisibleBy5) return 'Fizzbuzz';
 
-        if($value % 5 == 0) {
-            return "Buzz";
-        }
+        if($divisibleBy3) return 'Fizz';
+        
+        if($divisibleBy5) return 'Buzz';
 
-        return $value;
-
+        return $numb;
     }
 
 } 
